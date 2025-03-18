@@ -16,11 +16,17 @@
 
 </header>
 
+
+<div id="ball">
+  <img class="img_ball" src="https://www.conservation-nature.fr/wp-content/uploads/visuel/fruit/shutterstock_575378506.jpg" />
+</div>
+
 <div id="liste_fruit">
 </div>
   
 <!-- importation des script -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
 <script src="script/main.js" defer></script>
+<script src="script/index.js" defer></script>
 </body>
 </html>
