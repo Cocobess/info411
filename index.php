@@ -17,9 +17,7 @@
 </header>
 
 
-<div id="ball">
-  <img class="img_ball" src="https://www.conservation-nature.fr/wp-content/uploads/visuel/fruit/shutterstock_575378506.jpg" />
-</div>
+<img id="ball" src="https://www.conservation-nature.fr/wp-content/uploads/visuel/fruit/shutterstock_575378506.jpg" />
 
 <div id="liste_fruit">
 </div>

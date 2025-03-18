@@ -1,4 +1,4 @@
-axios.get("include/recuperer_fruit").then(response => {
+axios.get("include/recuperer_fruit.php").then(response => {
     afficher_fruit()
 })
 
