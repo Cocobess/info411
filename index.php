@@ -13,7 +13,6 @@
 <h1>WikiFruit</h1>
 
 
-<h2>Les fruits les plus chaud de ton departement</h2>
 
 </header>
 
