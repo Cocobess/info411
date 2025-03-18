@@ -15,7 +15,7 @@ const fruitContainer = document.querySelector("#liste_fruit")
 
 function afficher_fruit(){
     
-    axios.get("include/recuperer_fruit").then( response => {
+    axios.get("include/recuperer_fruit.php").then( response => {
 
     response.data.forEach( fruit => {
         let div = create("div",fruitContainer)
