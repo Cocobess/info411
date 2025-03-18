@@ -19,8 +19,12 @@ function afficher_fruit(){
 
     response.data.forEach( fruit => {
         let div = create("div",fruitContainer)
-        create("h2", div, fruit.nom)   
-        let ul = create("ul", div)   
+
+        let nom = create("h2", div, fruit.nom)  
+        nom.classList.add("nom")
+        let ul = create("ul", div)
+        ul.classList.add("description")
+   
         create("li", ul, "Poids : " + fruit.poid + " g.")             
         create("li", ul, "Taille : " + fruit.taille + " cm.")             
 
