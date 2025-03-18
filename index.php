@@ -12,15 +12,11 @@
 
 <h1>WikiFruit</h1>
 
-
+<h1>Les fruits les plus delicieux de ton departement</h1>
 
 </header>
 
-
-<div id="ball">
-  <img class="img_ball" src="https://www.conservation-nature.fr/wp-content/uploads/visuel/fruit/shutterstock_575378506.jpg" />
-</div>
-<h2>Les fruits les plus delicieux de ton departement</h2>
+<img id="ball" src="https://www.conservation-nature.fr/wp-content/uploads/visuel/fruit/shutterstock_575378506.jpg" />
 
 <div id="liste_fruit">
 </div>
