@@ -19,7 +19,7 @@ function afficher_fruit(){
 
     response.data.forEach( fruit => {
         let div = create("div",fruitContainer)
-
+        div.classList.add("fruit")
         let nom = create("h2", div, fruit.nom)  
         nom.classList.add("nom")
         let ul = create("ul", div)
