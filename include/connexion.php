@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect (hostname: "localhost" , username: "root" , password: "", "info411");
+$conn = mysqli_connect ("localhost" , "root" , "" , "info411");
 
 if(!$conn){
     echo("something wrong!!!") ; 
