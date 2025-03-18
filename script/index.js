@@ -1,8 +1,8 @@
-//const colors = ["red","blue", "yellow", "magenta", "purple", "brown", "cyan", "lime"]
-//const h1 = document.querySelector("h1")
-//setInterval(function() {
-//	h1.style.color = colors[Math.floor(Math.random()*colors.length)]
-//}, 100)
+const colors = ["red","blue", "yellow", "magenta", "purple", "brown", "cyan", "lime"]
+const h1 = document.querySelector("h1")
+setInterval(function() {
+	h1.style.color = colors[Math.floor(Math.random()*colors.length)]
+}, 100)
 
 
 const ballElement = document.querySelector("#ball")
