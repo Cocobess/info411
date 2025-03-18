@@ -12,6 +12,12 @@
 
 <h2>Les fruits les plus chaud de ton departement</h2>
 
+<div id="liste_fruit">
+  
+</div>
 
+<!-- importation des script -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+<script src="script/main.js" defer></script>
 </body>
 </html>

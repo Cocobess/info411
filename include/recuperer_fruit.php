@@ -26,7 +26,7 @@ function rs_to_tab($rs){
 	return $tab;
 }
 
-var_dump(liste_fruit($conn));
-var_dump(origine_fruit($conn, 1));
+echo json_encode(liste_fruit($conn));
+
 
 ?>
