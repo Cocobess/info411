@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>WikiFruit</title>
-  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
@@ -11,6 +11,7 @@
 
 
 <h2>Les fruits les plus chaud de ton departement</h2>
+
 
 </body>
 </html>
