@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect ("172.17.0.1" , "root" , "root" , "info411");
+$conn = mysqli_connect ("localhost" , "root" , "root" , "info411");
 
 //Connexion au serveur de bases de données
 if (mysqli_connect_errno()) {

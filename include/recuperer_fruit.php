@@ -1,6 +1,6 @@
 <?php
 
-include("connexion.php");
+include("../connect.php");
 
 function liste_fruit($conn){
 	$sql="SELECT * FROM `fruit`"; 
