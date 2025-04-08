@@ -1,9 +1,9 @@
 <?php
-$conn = mysqli_connect ("localhost" , "root" , "root" , "info411");
+$conn = mysqli_connect ("mariadb" , "user" , "user" , "info411");
 
 //Connexion au serveur de bases de données
 if (mysqli_connect_errno()) {
-    echo 'Désolé, connexion au serveur ' . "localhost" . ' impossible, '. mysqli_connect_error(), "\n";
+    echo 'Désolé, connexion au serveur ' . "mariadb" . ' impossible, '. mysqli_connect_error(), "\n";
     exit();
 }
 // Sélection de la base de données

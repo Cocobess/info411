@@ -1,0 +1,26 @@
+services:
+  mariadb:
+    image: mariadb
+    environment: 
+      - MARIADB_USER=user
+      - MARIADB_PASSWORD=user
+      - MARIADB_DATABASE=info411
+      - MARIADB_ROOT_PASSWORD=root
+    ports:
+      - 3306:3306
+    volumes:
+      - C:\Users\Riyad\Documents\cours\L2-S2\Info411\projet\info411\sql:/var/lib/mysql
+  monapache:
+    image: zenoghost25/monapache
+    volumes:
+      - .:/var/www.html
+    ports:
+      - "${PORT_SITE}:80"
+  phpmyadmin:
+    image: phpmyadmin
+    environment:
+      - PMA_HOST=mariadb
+    ports:
+      - "${PORT_PHPMYADMIN}:80"
+  monubuntu:
+    image: zenoghost25/monubuntu
