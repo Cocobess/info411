@@ -16,10 +16,17 @@ foreach ($lines as $line) {
 //define('NOM_BD', getenv('NOM_BD'));
 
 
-$nom_serveur = getenv('HOST');
-$nom_user = getenv('LOGIN_BD');
-$pwd_user = getenv(name: 'MDP_BD');
-$nom_database = getenv(name: 'NOM_BD');
+$nom_serveur   = getenv(name: 'HOST');
+$nom_user      = getenv('LOGIN_BD');
+$pwd_user      = getenv('MDP_BD');
+$nom_database  = getenv('NOM_BD');
+
+echo "Serveur: $nom_serveur\n";
+echo "Utilisateur: $nom_user\n";
+echo "Mot de passe: $pwd_user\n";
+echo "Base de données: $nom_database\n";
+
+
 
 $conn = mysqli_connect ($nom_serveur , $nom_user , $pwd_user , $nom_database);
 
