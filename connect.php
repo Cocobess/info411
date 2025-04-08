@@ -9,17 +9,10 @@ foreach ($lines as $line) {
     putenv(trim($key) . '=' . trim($value));
 }
 
-
-//define('SERVEUR_WEB', getenv('SERVEUR_WEB'));
-//define('USER_BD', getenv('USER_BD'));
-//define('PASS_BD', getenv('PASS_BD'));
-//define('NOM_BD', getenv('NOM_BD'));
-
-
-$nom_serveur   = getenv(name: 'HOST');
-$nom_user      = getenv('LOGIN_BD');
-$pwd_user      = getenv('MDP_BD');
-$nom_database  = getenv('NOM_BD');
+$nom_serveur = getenv(name: 'HOST');
+$nom_user = getenv('LOGIN_BD');
+$pwd_user = getenv('MDP_BD');
+$nom_database = getenv('NOM_BD');
 
 echo "Serveur: $nom_serveur\n";
 echo "Utilisateur: $nom_user\n";
