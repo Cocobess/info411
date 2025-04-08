@@ -1,5 +1,11 @@
 <?php
-$conn = mysqli_connect ("mariadb" , "user" , "user" , "info411");
+
+define('SERVEUR_WEB', getenv('SERVEUR_WEB'));
+define('USER_BD', getenv('USER_BD'));
+define('PASS_BD', getenv('PASS_BD'));
+define('NOM_BD', getenv('NOM_BD'));
+
+$conn = mysqli_connect ("SERVEUR_WEB" , "USER_BD" , "PASS_BD" , "NOM_BD");
 
 //Connexion au serveur de bases de données
 if (mysqli_connect_errno()) {
