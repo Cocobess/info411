@@ -12,8 +12,13 @@ services:
       - C:\Users\Corentin\Documents\USMB\s4\info411\info411\db_data:/var/lib/mysql
   monapache:
     image: corentinbess/monapache
+    environment: 
+      - USER_BD=${LOGIN_BD}
+      - PASS_BD=${MDP_BD}
+      - SERVEUR_WEB=${HOST}
+      - NOM_BD=${NOM_BD}
     volumes:
-      - .:/var/www.html
+      - .:/var/www/html
     ports:
       - "${PORT_SITE}:80"
   phpmyadmin:
