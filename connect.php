@@ -1,44 +1,36 @@
 <?php
-$lines = file('../.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+// Chemin Docker correct pour .env (dans le même répertoire que le script)
+$envPath = __DIR__ . '/.env';
+
+if (!file_exists($envPath)) {
+    die("Fichier .env introuvable à: $envPath");
+}
+
+$lines = file($envPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 foreach ($lines as $line) {
     $line = trim($line);
     if ($line === '' || strpos($line, '#') === 0) continue;
 
     [$key, $value] = explode('=', $line, 2);
-    putenv(trim($key) . '=' . trim($value));
+    $_ENV[trim($key)] = trim($value);
 }
 
-$nom_serveur = getenv(name: 'HOST');
-$nom_user = getenv('LOGIN_BD');
-$pwd_user = getenv('MDP_BD');
-$nom_database = getenv('NOM_BD');
+// Récupération des variables
+$nom_serveur = $_ENV['HOST'] ?? 'mariadb'; // Fallback Docker
+$nom_user = $_ENV['LOGIN_BD'] ?? 'user';
+$pwd_user = $_ENV['MDP_BD'] ?? 'user';
+$nom_database = $_ENV['NOM_BD'] ?? 'info411';
 
-echo "Serveur: $nom_serveur\n";
-echo "Utilisateur: $nom_user\n";
-echo "Mot de passe: $pwd_user\n";
-echo "Base de données: $nom_database\n";
+// Debug (à supprimer en production)
+error_log("Connexion à: host=$nom_serveur, user=$nom_user, db=$nom_database");
 
+$conn = mysqli_connect($nom_serveur, $nom_user, $pwd_user, $nom_database);
 
-
-$conn = mysqli_connect ($nom_serveur , $nom_user , $pwd_user , $nom_database);
-
-//Connexion au serveur de bases de données
 if (mysqli_connect_errno()) {
-    echo 'Désolé, connexion au serveur ' . "mariadb" . ' impossible, '. mysqli_connect_error(), "\n";
-    exit();
+    error_log("Erreur connexion MySQL: " . mysqli_connect_error());
+    die("Erreur de connexion à la base de données");
 }
-// Sélection de la base de données
-mysqli_select_db($conn, "info411");
-if (mysqli_connect_errno()) {
-    echo 'Désolé, accès à la base ' . "info411" . ' impossible, '. mysqli_connect_error(), "\n";
-    exit();
-}
-// Spécification de l'encodage UTF-8 pour dialoguer avec la BD
-if (!mysqli_set_charset($conn, 'UTF8')) {
-    echo 'Erreur au chargement de l\'encodage UTF-8 : ', mysqli_connect_error(), "\n";
-}
-
 
 mysqli_set_charset($conn, "utf8");
 ?>
