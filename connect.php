@@ -1,11 +1,27 @@
 <?php
+$lines = file('../.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-define('SERVEUR_WEB', getenv('SERVEUR_WEB'));
-define('USER_BD', getenv('USER_BD'));
-define('PASS_BD', getenv('PASS_BD'));
-define('NOM_BD', getenv('NOM_BD'));
+foreach ($lines as $line) {
+    $line = trim($line);
+    if ($line === '' || strpos($line, '#') === 0) continue;
 
-$conn = mysqli_connect ("SERVEUR_WEB" , "USER_BD" , "PASS_BD" , "NOM_BD");
+    [$key, $value] = explode('=', $line, 2);
+    putenv(trim($key) . '=' . trim($value));
+}
+
+
+//define('SERVEUR_WEB', getenv('SERVEUR_WEB'));
+//define('USER_BD', getenv('USER_BD'));
+//define('PASS_BD', getenv('PASS_BD'));
+//define('NOM_BD', getenv('NOM_BD'));
+
+
+$nom_serveur = getenv('HOST');
+$nom_user = getenv('LOGIN_BD');
+$pwd_user = getenv(name: 'MDP_BD');
+$nom_database = getenv(name: 'NOM_BD');
+
+$conn = mysqli_connect ($nom_serveur , $nom_user , $pwd_user , $nom_database);
 
 //Connexion au serveur de bases de données
 if (mysqli_connect_errno()) {

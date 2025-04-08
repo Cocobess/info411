@@ -9,14 +9,9 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - C:\Users\Riyad\Documents\cours\L2-S2\Info411\projet\info411\db_data:/var/lib/mysql
+      - C:\Users\Corentin\Documents\USMB\s4\info411\info411\db_data:/var/lib/mysql
   monapache:
-    image: zenoghost25/monapache
-    environment: 
-      - USER_BD=${LOGIN_BD}
-      - PASS_BD=${MDP_BD}
-      - SERVEUR_WEB=${HOST}
-      - NOM_BD=${NOM_BD}
+    image: corentinbess/monapache
     volumes:
       - .:/var/www.html
     ports:
@@ -28,4 +23,4 @@ services:
     ports:
       - "${PORT_PHPMYADMIN}:80"
   monubuntu:
-    image: zenoghost25/monubuntu
+    image: corentinbess/monubuntu
