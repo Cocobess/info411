@@ -9,7 +9,8 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - C:\Users\Corentin\Documents\USMB\s4\info411\info411\db_data:/var/lib/mysql
+      - ./db_backup:/db_backup
+      - ./db_data:/var/lib/mysql
   monapache:
     image: corentinbess/monapache
     volumes:
